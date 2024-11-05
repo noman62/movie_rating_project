@@ -39,7 +39,7 @@ The project should now be running at `http://localhost:8000`.
 ## Project Structure
 
 The project's folder structure is as follows:
-
+```
 MOVIE_RATING_PROJECT/
 │
 ├── requirements.txt            # Lists the project's dependencies
@@ -59,7 +59,7 @@ MOVIE_RATING_PROJECT/
 │   ├── views.py                 # Contains the view logic for handling requests and responses
 │   ├── urls.py                  # URL routing specific to the 'movies' app
 │   └── serializers.py           # Serializers for converting complex data types to JSON and vice versa
-
+```
 
 ## Dependencies
 Make sure to install the required dependencies by running `pip install -r requirements.txt`.
