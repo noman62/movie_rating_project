@@ -9,7 +9,7 @@ This is a comprehensive movie management system that allows users to log in, vie
 To get started with this project, follow these steps:
 
 1. **Clone the repository**:
-   ```
+   ```bash
    git clone https://github.com/noman62/movie_rating_project.git
    ```
 
