@@ -1,0 +1,13 @@
+asgiref
+distlib
+Django
+djangorestframework
+djangorestframework-simplejwt
+filelock
+pip
+platformdirs
+PyJWT
+python-dotenv
+sqlparse
+tzdata
+virtualenv
