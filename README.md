@@ -40,29 +40,26 @@ The project should now be running at `http://localhost:8000`.
 
 The project's folder structure is as follows:
 
-```
 MOVIE_RATING_PROJECT/
 │
-├── requirements.txt
-├── manage.py
+├── requirements.txt            # Lists the project's dependencies
+├── manage.py                    # Command-line utility for administrative tasks
 │
-├── movie_project/                 # Project configuration directory
-│   ├── __init__.py
-│   ├── settings.py        # Project settings
-│   ├── urls.py            # Project URL configuration
-│   ├── wsgi.py            # WSGI configuration
-│   └── asgi.py            # ASGI configuration
+├── movie_project/               # Project configuration directory
+│   ├── __init__.py              # Indicates that this directory is a Python package
+│   ├── settings.py              # Contains settings and configurations for the Django project
+│   ├── urls.py                  # URL routing for the project
+│   ├── wsgi.py                  # Entry point for WSGI-compatible web servers
+│   └── asgi.py                  # Entry point for ASGI-compatible web servers
 │
-├── movies/                 # Main application directory
-│   ├── __init__.py
-│   ├── apps.py
-│   ├── models.py          # Database models
-│   ├── views.py           # View logic
-│   ├── urls.py            # App-specific URLs
-│   └── serializers.py     # API serializers
-│
+├── movies/                      # Main application directory for movie rating functionality
+│   ├── __init__.py              # Indicates that this directory is a Python package
+│   ├── apps.py                  # Application configuration for the 'movies' app
+│   ├── models.py                # Database models defining the structure of movie-related data
+│   ├── views.py                 # Contains the view logic for handling requests and responses
+│   ├── urls.py                  # URL routing specific to the 'movies' app
+│   └── serializers.py           # Serializers for converting complex data types to JSON and vice versa
 
-```
 
 ## Dependencies
 Make sure to install the required dependencies by running `pip install -r requirements.txt`.
