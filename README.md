@@ -1,8 +1,15 @@
-
-```markdown
 # Movie Rating Project
 
 This is a comprehensive movie management system that allows users to log in, view movies, create new movies, update existing ones, and rate them. The project also includes an admin role to manage reported movies.
+
+## Table of Contents
+
+1. [Getting Started](#getting-started)
+2. [Project Structure](#project-structure)
+3. [Dependencies](#dependencies)
+4. [API Endpoints](#api-endpoints)
+5. [API Endpoint Documentation](#api-endpoint-documentation)
+6. [Contributing](#contributing)
 
 ## Getting Started
 
@@ -14,23 +21,23 @@ To get started with this project, follow these steps:
    ```
 
 2. **Install dependencies**:
-   ```
+   ```bash
    cd movie-rating-project
    pip install -r requirements.txt
    ```
 
 3. **Run database migrations**:
-   ```
+   ```bash
    python manage.py migrate
    ```
 
-5. **Create a superuser (admin)**:
-   ```
+4. **Create a superuser (admin)**:
+   ```bash
    python manage.py createsuperuser
    ```
 
-6. **Start the development server**:
-   ```
+5. **Start the development server**:
+   ```bash
    python manage.py runserver
    ```
 
@@ -43,22 +50,22 @@ The project's folder structure is as follows:
 MOVIE_RATING_PROJECT/
 │
 ├── requirements.txt            # Lists the project's dependencies
-├── manage.py                    # Command-line utility for administrative tasks
+├── manage.py                  # Command-line utility for administrative tasks
 │
-├── movie_project/               # Project configuration directory
-│   ├── __init__.py              # Indicates that this directory is a Python package
-│   ├── settings.py              # Contains settings and configurations for the Django project
-│   ├── urls.py                  # URL routing for the project
-│   ├── wsgi.py                  # Entry point for WSGI-compatible web servers
-│   └── asgi.py                  # Entry point for ASGI-compatible web servers
+├── movie_project/            # Project configuration directory
+│   ├── __init__.py          # Indicates that this directory is a Python package
+│   ├── settings.py          # Contains settings and configurations for the Django project
+│   ├── urls.py              # URL routing for the project
+│   ├── wsgi.py              # Entry point for WSGI-compatible web servers
+│   └── asgi.py              # Entry point for ASGI-compatible web servers
 │
-├── movies/                      # Main application directory for movie rating functionality
-│   ├── __init__.py              # Indicates that this directory is a Python package
-│   ├── apps.py                  # Application configuration for the 'movies' app
-│   ├── models.py                # Database models defining the structure of movie-related data
-│   ├── views.py                 # Contains the view logic for handling requests and responses
-│   ├── urls.py                  # URL routing specific to the 'movies' app
-│   └── serializers.py           # Serializers for converting complex data types to JSON and vice versa
+├── movies/                   # Main application directory for movie rating functionality
+│   ├── __init__.py          # Indicates that this directory is a Python package
+│   ├── apps.py              # Application configuration for the 'movies' app
+│   ├── models.py            # Database models defining the structure of movie-related data
+│   ├── views.py             # Contains the view logic for handling requests and responses
+│   ├── urls.py              # URL routing specific to the 'movies' app
+│   └── serializers.py       # Serializers for converting complex data types to JSON and vice versa
 ```
 
 ## Dependencies
@@ -71,43 +78,37 @@ The project exposes the following API endpoints:
 ### Authentication
 - `POST /api/auth/login`: Login with username/email and password
 
-## API Endpoints
-
 ### Movie Management
-
-- `POST /api/movies/`: Add a new movie.
-- `GET /api/movies/`: Get all movie list.
-- `PUT /api/movies/{id}`: Update the information of an existing movie by its ID.
+- `POST /api/movies/`: Add a new movie
+- `GET /api/movies/`: Get all movie list
+- `PUT /api/movies/{id}`: Update the information of an existing movie by its ID
 
 ### Movie Ratings
-
-- `POST /api/ratings/`: Submit a rating for a movie by its ID.
-- `GET /api/ratings/{id}/`: Retrieve the rating for a specific movie by its ID.
-- `PUT /api/ratings/{id}/`: Modify the rating for a movie by its ID.
-- `GET /api/ratings/`: Retrieve all ratings for movies.
+- `POST /api/ratings/`: Submit a rating for a movie by its ID
+- `GET /api/ratings/{id}/`: Retrieve the rating for a specific movie by its ID
+- `PUT /api/ratings/{id}/`: Modify the rating for a movie by its ID
+- `GET /api/ratings/`: Retrieve all ratings for movies
 
 ### Movie Reporting
-
-- `POST /api/reports/`: Submit a report for a movie.
-- `GET /api/reports/`: Retrieve a list of all movie reports.
-- `GET /api/reports/{id}`: Retrieve details of a single movie report by its ID.
+- `POST /api/reports/`: Submit a report for a movie
+- `GET /api/reports/`: Retrieve a list of all movie reports
+- `GET /api/reports/{id}`: Retrieve details of a single movie report by its ID
 
 ### Admin Access
-
-- `GET /api/admin/reports/`: Retrieve all movie reports for admin access.
-- `GET /api/admin/reports/{id}/resolve/`: Retrieve and mark a specific movie report as resolved.
+- `GET /api/admin/reports/`: Retrieve all movie reports for admin access
+- `GET /api/admin/reports/{id}/resolve/`: Retrieve and mark a specific movie report as resolved
 
 Note: All endpoints except `/login` require authentication. The admin-specific endpoints are only accessible to users with the admin role.
 
-# API Endpoint Documentation
+## API Endpoint Documentation
 
 This document provides a comprehensive overview of the API endpoints available in the application.
 
-## Authentication
+### Authentication
 
-### Register User
-**Endpoint**: `POST /api/auth/register/`
-**Description**: Create a new user account.
+#### Register User
+**Endpoint**: `POST /api/auth/register/`  
+**Description**: Create a new user account.  
 **Request Body**:
 ```json
 {
@@ -134,9 +135,9 @@ This document provides a comprehensive overview of the API endpoints available i
 }
 ```
 
-### Login User
-**Endpoint**: `POST /api/auth/login/`
-**Description**: Authenticate a user and receive access/refresh tokens.
+#### Login User
+**Endpoint**: `POST /api/auth/login/`  
+**Description**: Authenticate a user and receive access/refresh tokens.  
 **Request Body**:
 ```json
 {
@@ -162,11 +163,11 @@ This document provides a comprehensive overview of the API endpoints available i
 }
 ```
 
-## Movies
+### Movies
 
-### List Movies
-**Endpoint**: `GET /api/movies/`
-**Description**: Retrieve a list of all movies.
+#### List Movies
+**Endpoint**: `GET /api/movies/`  
+**Description**: Retrieve a list of all movies.  
 **Response**:
 ```json
 [
@@ -201,9 +202,9 @@ This document provides a comprehensive overview of the API endpoints available i
 ]
 ```
 
-### Create Movie
-**Endpoint**: `POST /api/movies/`
-**Description**: Create a new movie.
+#### Create Movie
+**Endpoint**: `POST /api/movies/`  
+**Description**: Create a new movie.  
 **Request Body**:
 ```json
 {
@@ -233,14 +234,14 @@ This document provides a comprehensive overview of the API endpoints available i
 }
 ```
 
-### Rate a Movie
-**Endpoint**: `POST /api/ratings/`
-**Description**: Rate a movie.
+#### Rate a Movie
+**Endpoint**: `POST /api/ratings/`  
+**Description**: Rate a movie.  
 **Request Body**:
 ```json
 {
     "id": 2,
-    "movie": 1,
+    "movie": 1
 }
 ```
 **Response**:
@@ -254,9 +255,9 @@ This document provides a comprehensive overview of the API endpoints available i
 }
 ```
 
-###  Retrieve all ratings for movies
-**Endpoint**: `GET /api/ratings/`
-**Description**:  Retrieve all ratings for movies
+#### Retrieve all ratings for movies
+**Endpoint**: `GET /api/ratings/`  
+**Description**: Retrieve all ratings for movies  
 **Response**:
 ```json 
 [
@@ -276,9 +277,10 @@ This document provides a comprehensive overview of the API endpoints available i
     }
 ]
 ```
-### Retrieve the rating for a specific movie by its ID.
-**Endpoint**: `POST /api/ratings/`
-**Description**: Retrieve the rating for a specific movie by its ID.
+
+#### Retrieve the rating for a specific movie by its ID
+**Endpoint**: `POST /api/ratings/`  
+**Description**: Retrieve the rating for a specific movie by its ID.  
 **Response**:
 ```json 
 {
@@ -289,9 +291,10 @@ This document provides a comprehensive overview of the API endpoints available i
     "created_at": "2024-11-05T09:56:49.391523Z"
 }
 ```
-###  Modify the rating for a movie by its ID.
-**Endpoint**: `PUT /api/ratings/{id}/`
-**Description**:  Modify the rating for a movie by its ID.
+
+#### Modify the rating for a movie by its ID
+**Endpoint**: `PUT /api/ratings/{id}/`  
+**Description**: Modify the rating for a movie by its ID.  
 **Request Body**:
 ```json
 {
@@ -310,11 +313,11 @@ This document provides a comprehensive overview of the API endpoints available i
 }
 ```
 
-## Reporting
+### Reporting
 
-### Report a Movie
-**Endpoint**: `POST /api/reports/`
-**Description**: Report a movie.
+#### Report a Movie
+**Endpoint**: `POST /api/reports/`  
+**Description**: Report a movie.  
 **Request Body**:
 ```json
 {
@@ -337,9 +340,9 @@ This document provides a comprehensive overview of the API endpoints available i
 }
 ```
 
-### View Reports (User)
-**Endpoint**: `GET /api/reports/`
-**Description**: View the reports created by the current user.
+#### View Reports (User)
+**Endpoint**: `GET /api/reports/`  
+**Description**: View the reports created by the current user.  
 **Response**:
 ```json
 [
@@ -353,14 +356,13 @@ This document provides a comprehensive overview of the API endpoints available i
     "resolved": false,
     "resolved_at": null,
     "admin_notes": ""
-}
+   }
 ]
 ```
 
-
-###  Retrieve details of a single movie report by its ID.
-**Endpoint**: `GET /api/reports/{id}`
-**Description**:  Retrieve details of a single movie report by its ID.
+#### Retrieve details of a single movie report by its ID
+**Endpoint**: `GET /api/reports/{id}`  
+**Description**: Retrieve details of a single movie report by its ID.  
 **Response**:
 ```json
 {
@@ -377,9 +379,9 @@ This document provides a comprehensive overview of the API endpoints available i
 }
 ```
 
-### View Reports (Admin)
-**Endpoint**: `GET /api/admin/reports/`
-**Description**: View all reports (admin access required). Admins must log in with their email and password to receive an authorization token.
+#### View Reports (Admin)
+**Endpoint**: `GET /api/admin/reports/`  
+**Description**: View all reports (admin access required). Admins must log in with their email and password to receive an authorization token.  
 **Response**:
 ```json
 [
@@ -404,14 +406,13 @@ This document provides a comprehensive overview of the API endpoints available i
         "resolved": false,
         "resolved_at": null,
         "admin_notes": ""
-    },
-
+    }
 ]
 ```
 
-### Resolve a Report (Admin)
-**Endpoint**: `POST /api/admin/reports/{id}/resolve/`
-**Description**: Resolve a report (admin access required).
+#### Resolve a Report (Admin)
+**Endpoint**: `POST /api/admin/reports/{id}/resolve/`  
+**Description**: Resolve a report (admin access required).  
 **Request Body**:
 ```json
 {
@@ -439,9 +440,9 @@ This document provides a comprehensive overview of the API endpoints available i
 }
 ```
 
-### Get Reporting Statistics (Admin)
-**Endpoint**: `GET /api/admin/reports/statistics/`
-**Description**: Retrieve reporting statistics (admin access required).
+#### Get Reporting Statistics (Admin)
+**Endpoint**: `GET /api/admin/reports/statistics/`  
+**Description**: Retrieve reporting statistics (admin access required).  
 **Response**:
 ```json
 {
@@ -463,4 +464,3 @@ If you would like to contribute to this project, please follow the standard GitH
 3. Commit your changes
 4. Push your branch to your forked repository
 5. Submit a pull request
-```
