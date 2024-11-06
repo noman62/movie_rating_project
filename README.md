@@ -458,7 +458,6 @@ Please note that the access token obtained from the login endpoint needs to be i
 ## Contributing
 
 If you would like to contribute to this project, please follow the standard GitHub workflow:
-
 1. Fork the repository
 2. Create a new branch for your feature or bug fix
 3. Commit your changes
